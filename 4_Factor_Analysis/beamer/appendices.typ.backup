@@ -3,7 +3,7 @@
 
 // Tec de Monterrey color palette
 #let tec-blue = rgb("#003f7f")      // Tec de Monterrey signature blue
-#let tec-light-blue = rgb("#0066cc") // Lighter blue  where $bold(D) = \"diag\"(s_{11}, s_{22}, ..., s_{p,p})$ where $bold(D) = \"diag\"(s_{11}, s_{22}, ..., s_{p p})$for accents
+#let tec-light-blue = rgb("#0066cc") // Lighter blue for accents
 
 #set page(
   width: 16cm,
@@ -108,7 +108,7 @@
   - $n times n$ matrix has exactly $n$ eigenvalues (counting multiplicities)
   - Eigenvalues can be real or complex conjugate pairs
   - Sum of eigenvalues equals trace: $sum_(i=1)^n lambda_i = "tr"(bold(A))$
-  - Product of eigenvalues equals determinant: $product_(i=1)^n lambda_i = det(bold(A))$
+  - Product of eigenvalues equals determinant: $prod_(i=1)^n lambda_i = det(bold(A))$
 
   *Geometric Interpretation:*
   - Eigenvector: direction unchanged by transformation
@@ -156,14 +156,14 @@
   - $||bold(A) + bold(B)||_F <= ||bold(A)||_F + ||bold(B)||_F$ (triangle inequality)
 
   *Spectral Norm (2-norm):*
-  $||bold(A)||_2 = sigma_"max"(bold(A)) = sqrt(lambda_"max"(bold(A)^top bold(A)))$
+  $||bold(A)||_2 = sigma_"max"(bold(A)) = sqrt(lambda_"max"(bold(A)^top bold(A))}$
 
   *Mahalanobis Distance:*
   $d^2(bold(x), bold(mu)) = (bold(x) - bold(mu))^top bold(Sigma)^(-1) (bold(x) - bold(mu))$
 
   *Applications in Multivariate Analysis:*
   - Frobenius norm: measuring fit in factor analysis
-  - Spectral norm: condition n umber analysis
+  - Spectral norm: condition number analysis
   - Mahalanobis distance: outlier detection, multivariate normality tests
   - All preserve relationships under orthogonal transformations
 ]
@@ -178,7 +178,7 @@
 
   *Quadratic Form Derivatives:*
   - $frac(partial, partial bold(x)) bold(x)^top bold(A) bold(x) = (bold(A) + bold(A)^top) bold(x)$
-  - For symmetric $bold(A)$: $frac(partial, partial bold(x)) bold(x)^top bold(A) bold(x) = 2 bold(A) bold(x)$
+  - For symmetric $bold(A)$: $frac(partial, partial bold(x)) bold(x}^top bold(A) bold(x) = 2 bold(A) bold(x)$
 
   *Determinant and Inverse:*
   - $frac(partial, partial bold(A)) log det(bold(A)) = (bold(A)^(-1))^top$
@@ -202,18 +202,18 @@
   - $bold(V) in RR^(n times n)$: right singular vectors (orthogonal)
 
   *Relationship to Eigendecomposition:*
-  - $bold(A)^top bold(A) = bold(V) bold(Sigma)^top bold(Sigma) bold(V)^top$ (eigendecomposition)
-  - $bold(A) bold(A)^top = bold(U) bold(Sigma) bold(Sigma)^top bold(U)^top$ (eigendecomposition)
-  - Singular values: $sigma_i = sqrt(lambda_i (bold(A)^top bold(A)))$
+  - $bold(A}^top bold(A) = bold(V) bold(Sigma)^top bold(Sigma) bold(V)^top$ (eigendecomposition)
+  - $bold(A) bold(A)^top = bold(U) bold(Sigma) bold(Sigma}^top bold(U)^top$ (eigendecomposition)
+  - Singular values: $sigma_i = sqrt(lambda_i (bold(A)^top bold(A))}$
 
   *Properties:*
-  - Rank of $bold(A)$ = n umber of non-zero singular values
+  - Rank of $bold(A)$ = number of non-zero singular values
   - $||bold(A)||_2 = sigma_1$ (largest singular value)
   - $||bold(A)||_F = sqrt(sum_(i=1)^r sigma_i^2)$ where $r = "rank"(bold(A))$
 
   *Applications in Multivariate Statistics:*
   - Principal Component Analysis (PCA of data matrix)
-  - Pseudoinverse computation: $bold(A)^+ = bold(V) bold(Sigma)^+ bold(U)^top$
+  - Pseudoinverse computation: $bold(A)^+ = bold(V) bold(Sigma}^+ bold(U)^top$
   - Low-rank matrix approximation
   - Numerical stability in factor analysis algorithms
 ]
@@ -222,7 +222,7 @@
 
 #slide(title: [Multivariate Normal Distribution])[
   *Definition:* Random vector $bold(X) in RR^p$ follows multivariate normal distribution:
-  $bold(X) ~ N(bold(mu), bold(Sigma))$
+  $bold(X) sim N(bold(mu), bold(Sigma))$
 
   *Probability Density Function:*
   $f(bold(x)) = frac(1, (2 pi)^(p/2) |bold(Sigma)|^(1/2)) exp(- frac(1, 2) (bold(x) - bold(mu))^top bold(Sigma)^(-1) (bold(x) - bold(mu)))$
@@ -232,12 +232,12 @@
   - $bold(Sigma) in RR^(p times p)$: covariance matrix (positive definite)
 
   *Key Properties:*
-  - Linear combinations remain normal: $bold(a)^top bold(X) ~ N(bold(a)^top bold(mu), bold(a)^top bold(Sigma) bold(a))$
-  - Marginal distributions are normal: $X_i ~ N(mu_i, sigma_(i i))$
+  - Linear combinations remain normal: $bold(a}^top bold(X) sim N(bold(a}^top bold(mu), bold(a}^top bold(Sigma) bold(a))$
+  - Marginal distributions are normal: $X_i sim N(mu_i, sigma_(i i))$
   - Conditional distributions are normal (given subset of variables)
 
   *Standardization:*
-  If $bold(X) ~ N(bold(mu), bold(Sigma))$, then $(bold(X) - bold(mu))^top bold(Sigma)^(-1) (bold(X) - bold(mu)) ~ chi^2_p$
+  If $bold(X} sim N(bold(mu}, bold(Sigma))$, then $(bold(X} - bold(mu))^top bold(Sigma}^(-1) (bold(X) - bold(mu)) sim chi^2_p$
 
   *Importance for Factor Analysis:*
   - Maximum likelihood estimation assumes multivariate normality
@@ -247,70 +247,70 @@
 
 #slide(title: [Sample Statistics and Their Properties])[
   *Sample Mean Vector:*
-  $overline(bold(x)) = frac(1, n) sum_(i=1)^n bold(x)_i = frac(1, n) bold(X)^top bold(1)_n$
+  $overline(bold(x)) = frac(1, n) sum_(i=1)^n bold(x}_i = frac(1, n) bold(X}^top bold(1}_n$
 
   *Properties:*
-  - $E[overline(bold(x))] = bold(mu)$ (unbiased)
-  - $"Cov"(overline(bold(x))) = frac(1, n) bold(Sigma)$ (scales with sample size)
-  - $sqrt(n)(overline(bold(x)) - bold(mu)) arrow.r N(bold(0), bold(Sigma))$ (asymptotic normality)
+  - $E[overline(bold(x}}] = bold(mu}$ (unbiased)
+  - $"Cov"(overline(bold(x}}) = frac(1, n) bold(Sigma}$ (scales with sample size)
+  - $sqrt(n)(overline(bold(x}} - bold(mu}) arrow.r N(bold(0}, bold(Sigma})$ (asymptotic normality)
 
   *Sample Covariance Matrix:*
-  $bold(S) = frac(1, n-1) sum_(i=1)^n (bold(x)_i - overline(bold(x)))(bold(x)_i - overline(bold(x)))^top$
+  $bold(S} = frac(1, n-1) sum_(i=1)^n (bold(x}_i - overline(bold(x}})(bold(x}_i - overline(bold(x}})^top$
 
   *Matrix Form:*
-  $bold(S) = frac(1, n-1) (bold(X) - bold(1)_n overline(bold(x))^top)^top (bold(X) - bold(1)_n overline(bold(x))^top)$
+  $bold(S} = frac(1, n-1} (bold(X} - bold(1}_n overline(bold(x}}^top)^top (bold(X} - bold(1}_n overline(bold(x}}^top)$
 
   *Properties:*
-  - $E[bold(S)] = bold(Sigma)$ (unbiased)
-  - $(n-1) bold(S) ~ W_p(n-1, bold(Sigma))$ (Wishart distribution)
+  - $E[bold(S}] = bold(Sigma}$ (unbiased)
+  - $(n-1) bold(S} sim W_p(n-1, bold(Sigma})$ (Wishart distribution)
   - Positive semidefinite with probability 1 if $n >= p$
 
   *Sample Correlation Matrix:*
-  $bold(R) = bold(D)^(-1/2) bold(S) bold(D)^(-1/2)$
-  where $bold(D) = "diag"(s_{11}, s_{22}, ..., s_{p p})$
+  $bold(R} = bold(D}^(-1/2) bold(S} bold(D}^(-1/2)$
+  where $bold(D} = "diag"(s_{11}, s_{22}, ..., s_{pp})$
 ]
 
 #slide(title: [Maximum Likelihood Estimation])[
   *General Principle:* Find parameters that maximize the likelihood of observing the sample data.
 
   *For Multivariate Normal Data:*
-  $L(bold(mu), bold(Sigma)) = product_(i=1)^n frac(1, (2 pi)^(p/2) |bold(Sigma)|^(1/2)) exp(- frac(1, 2) (bold(x)_i - bold(mu))^top bold(Sigma)^(-1) (bold(x)_i - bold(mu)))$
+  $L(bold(mu}, bold(Sigma}) = prod_(i=1)^n frac(1, (2 pi)^(p/2) |bold(Sigma}|^(1/2)) exp(- frac(1, 2} (bold(x}_i - bold(mu})^top bold(Sigma}^(-1) (bold(x}_i - bold(mu}))$
 
   *Log-Likelihood:*
-  $ell(bold(mu), bold(Sigma)) = -frac(n p, 2) log(2 pi) - frac(n, 2) log |bold(Sigma)| - frac(1, 2) sum_(i=1)^n (bold(x)_i - bold(mu))^top bold(Sigma)^(-1) (bold(x)_i - bold(mu))$
+  $ell(bold(mu}, bold(Sigma}) = -frac(n p, 2) log(2 pi) - frac(n, 2} log |bold(Sigma}| - frac(1, 2} sum_(i=1)^n (bold(x}_i - bold(mu})^top bold(Sigma}^(-1) (bold(x}_i - bold(mu})$
 
   *ML Estimators:*
-  - $hat(bold(mu)) = overline(bold(x))$ (sample mean)
-  - $hat(bold(Sigma)) = frac{1}{n} sum_(i=1)^n (bold(x)_i - overline(bold(x)))(bold(x)_i - overline(bold(x)))^top$ (ML covariance)
+  - $hat(bold(mu}) = overline(bold(x}}$ (sample mean)
+  - $hat(bold(Sigma}) = frac{1}{n} sum_(i=1)^n (bold(x}_i - overline(bold(x}})(bold(x}_i - overline(bold(x}})^top$ (ML covariance)
 
   *Properties:*
-  - Consistent: $hat(bold(theta)) arrow.r bold(theta)$ as $n arrow.r infinity$
-  - Asymptotically normal: $sqrt(n)(hat(bold(theta)) - bold(theta)) arrow.r N(bold(0), bold(I)^(-1)(bold(theta)))$
+  - Consistent: $hat(bold(theta}) arrow.r bold(theta}$ as $n arrow.r infinity$
+  - Asymptotically normal: $sqrt(n}(hat(bold(theta}) - bold(theta}) arrow.r N(bold(0}, bold(I}^(-1)(bold(theta}))$
   - Asymptotically efficient: achieves Cramér-Rao lower bound
 
   *Application to Factor Analysis:*
-  - Estimate factor loadings $bold(Lambda)$ and unique variances $bold(Psi)$
+  - Estimate factor loadings $bold(Lambda}$ and unique variances $bold(Psi}$
   - Iterative algorithms (EM algorithm)
   - Model comparison via likelihood ratio tests
 ]
 
 #slide(title: [Hypothesis Testing in Multivariate Analysis])[
   *Likelihood Ratio Test Principle:*
-  $Lambda = frac{L(hat(bold(theta))_0)}{L(hat(bold(theta)))} = frac{"max likelihood under " H_0}{"max likelihood unrestricted"}$
+  $Lambda = frac{L(hat(bold(theta}}_0)}{L(hat(bold(theta}))} = frac{"max likelihood under " H_0}{"max likelihood unrestricted"}$
 
   *Test Statistic:*
-  $-2 log Lambda ~ chi^2_n u$ (asymptotically)
-  where $n u$ = difference in n umber of parameters
+  $-2 log Lambda sim chi^2_nu$ (asymptotically)
+  where $nu$ = difference in number of parameters
 
   *Bartlett's Test of Sphericity:*
-  - $H_0$: $bold(Sigma) = sigma^2 bold(I)$ (variables uncorrelated, equal variances)
-  - Test statistic: $chi^2 = -(n - 1 - frac{2p + 5}{6}) log |bold(R)|$
+  - $H_0$: $bold(Sigma} = sigma^2 bold(I}$ (variables uncorrelated, equal variances)
+  - Test statistic: $chi^2 = -(n - 1 - frac{2p + 5}{6}) log |bold(R}|$
   - Degrees of freedom: $frac{p(p-1)}{2}$
 
   *Goodness-of-Fit in Factor Analysis:*
-  - $H_0$: $bold(Sigma) = bold(Lambda) bold(Lambda)^top + bold(Psi)$ (model fits)
-  - Test statistic: $chi^2 = (n-1)[log |hat(bold(Sigma))| - log |bold(S)| + "tr"(bold(S) hat(bold(Sigma))^(-1)) - p]$
-  - Degrees of freedom: $frac{p(p-1)}{2} - p k - p$ where $k$ = n umber of factors
+  - $H_0$: $bold(Sigma} = bold(Lambda} bold(Lambda}^top + bold(Psi}$ (model fits)
+  - Test statistic: $chi^2 = (n-1)[log |hat(bold(Sigma}}| - log |bold(S}| + "tr"(bold(S} hat(bold(Sigma}}^(-1)) - p]$
+  - Degrees of freedom: $frac{p(p-1)}{2} - pk - p$ where $k$ = number of factors
 
   *Multiple Testing Considerations:*
   - Bonferroni correction for multiple comparisons
@@ -320,18 +320,18 @@
 
 #slide(title: [Asymptotic Theory and Large Sample Properties])[
   *Central Limit Theorem for Multivariate Data:*
-  If $bold(X)_1, bold(X)_2, ..., bold(X)_n$ are i.i.d. with $E[bold(X)_i] = bold(mu)$ and $"Cov"(bold(X)_i) = bold(Sigma)$:
-  $sqrt(n)(overline(bold(X)) - bold(mu)) arrow.r^d N(bold(0), bold(Sigma))$
+  If $bold(X}_1, bold(X}_2, ..., bold(X}_n$ are i.i.d. with $E[bold(X}_i] = bold(mu}$ and $"Cov"(bold(X}_i) = bold(Sigma}$:
+  $sqrt(n}(overline(bold(X}} - bold(mu}) arrow.r^d N(bold(0}, bold(Sigma})$
 
   *Delta Method:* For differentiable function $g$:
-  $sqrt(n)(g(overline(bold(X))) - g(bold(mu))) arrow.r^d N(bold(0), bold(D) bold(Sigma) bold(D)^top)$
-  where $bold(D) = nabla g(bold(mu))$ (gradient matrix)
+  $sqrt(n}(g(overline(bold(X}}) - g(bold(mu})) arrow.r^d N(bold(0}, bold(D} bold(Sigma} bold(D}^top)$
+  where $bold(D} = nabla g(bold(mu})$ (gradient matrix)
 
-  *Slutsky's Theorem:* If $bold(X)_n arrow.r^d bold(X)$ and $bold(Y)_n arrow.r^p bold(c)$:
-  - $bold(X)_n + bold(Y)_n arrow.r^d bold(X) + bold(c)$
-  - $bold(Y)_n^top bold(X)_n arrow.r^d bold(c)^top bold(X)$
+  *Slutsky's Theorem:* If $bold(X}_n arrow.r^d bold(X}$ and $bold(Y}_n arrow.r^p bold(c}$:
+  - $bold(X}_n + bold(Y}_n arrow.r^d bold(X} + bold(c}$
+  - $bold(Y}_n^top bold(X}_n arrow.r^d bold(c}^top bold(X}$
 
-  *Contin uous Mapping Theorem:* If $bold(X)_n arrow.r^d bold(X)$ and $g$ is contin uous:
+  *Continuous Mapping Theorem:* If $bold(X}_n arrow.r^d bold(X}$ and $g$ is continuous:
   $g(bold(X}_n) arrow.r^d g(bold(X})$
 
   *Applications:*
@@ -343,21 +343,21 @@
 
 #slide(title: [Information Theory and Model Selection])[
   *Kullback-Leibler Divergence:*
-  $D_"KL"(P || Q) = integral p(bold(x)) log frac{p(bold(x))}{q(bold(x))} d bold(x)$
+  $D_"KL"(P || Q) = integral p(bold(x}) log frac{p(bold(x})}{q(bold(x})} d bold(x}$
 
   *Measures "distance" between probability distributions*
   - $D_"KL"(P || Q) >= 0$ with equality if and only if $P = Q$
   - Not symmetric: $D_"KL"(P || Q) != D_"KL"(Q || P)$
 
   *Akaike Information Criterion (AIC):*
-  $"AIC" = -2 ell(hat(bold(theta))) + 2k$
-  where $k$ = n umber of parameters
+  $"AIC" = -2 ell(hat(bold(theta}}) + 2k$
+  where $k$ = number of parameters
 
   *Bayesian Information Criterion (BIC):*
-  $"BIC" = -2 ell(hat(bold(theta))) + k log(n)$
+  $"BIC" = -2 ell(hat(bold(theta}}) + k log(n)$
 
   *Model Selection Strategy:*
-  1. Fit multiple models with different n umbers of factors
+  1. Fit multiple models with different numbers of factors
   2. Compare AIC/BIC values
   3. Choose model with lowest criterion value
   4. Validate with cross-validation or hold-out data
@@ -369,38 +369,38 @@
   - Consider interpretability alongside statistical criteria
 
   *Information Matrix:*
-  $bold(I)(bold(theta)) = -E[frac{partial^2 ell}{partial bold(theta) partial bold(theta)^top}]$
-  - Provides asymptotic covariance: $"Cov"(hat(bold(theta))) approx bold(I)^(-1)(bold(theta))$
+  $bold(I}(bold(theta}) = -E[frac{partial^2 ell}{partial bold(theta} partial bold(theta}^top}]$
+  - Provides asymptotic covariance: $"Cov"(hat(bold(theta}}) approx bold(I}^(-1)(bold(theta})$
   - Used for standard errors and confidence intervals
 ]
 
 #slide(title: [Computational Considerations and Numerical Stability])[
   *Condition Number:*
-  $kappa(bold(A)) = frac{sigma_"max"}{sigma_"min"}$ (ratio of largest to smallest singular value)
+  $kappa(bold(A}) = frac{sigma_"max"}sigma_"min"$ (ratio of largest to smallest singular value)
 
   *Numerical Issues:*
-  - $kappa(bold(A)) > 10^{12}$ indicates near-singularity
+  - $kappa(bold(A}) > 10^{12}$ indicates near-singularity
   - Small eigenvalues lead to unstable inverse calculations
   - Rounding errors accumulate in iterative algorithms
 
   *Stable Algorithms:*
-  1. *QR Decomposition* instead of normal equations: $bold(A) = bold(Q) bold(R)$
-  2. *SVD* for pseudoinverses: $bold(A)^+ = bold(V) bold(Sigma)^+ bold(U)^top$
-  3. *Cholsky Decomposition* for positive definite matrices: $bold(A) = bold(L) bold(L)^top$
+  1. *QR Decomposition* instead of normal equations: $bold(A} = bold(Q} bold(R}$
+  2. *SVD* for pseudoinverses: $bold(A}^+ = bold(V} bold(Sigma}^+ bold(U}^top$
+  3. *Cholsky Decomposition* for positive definite matrices: $bold(A} = bold(L} bold(L}^top$
 
   *Regularization Techniques:*
-  - Ridge regularization: $bold(A) + lambda bold(I)$ for small $lambda > 0$
+  - Ridge regularization: $bold(A} + lambda bold(I}$ for small $lambda > 0$
   - Shrinkage estimators for covariance matrices
   - Robust correlation estimation (e.g., Spearman rank correlation)
 
   *Convergence Criteria:*
-  - Relative change in parameters: $frac{||bold(theta)_{k+1} - bold(theta)_k||}{||bold(theta)_k||} < epsilon$
+  - Relative change in parameters: $frac{||bold(theta}_{k+1} - bold(theta}_k||}{||bold(theta}_k||} < epsilon$
   - Change in log-likelihood: $|ell_{k+1} - ell_k| < epsilon$
   - Gradient norm: $||nabla ell|| < epsilon$
 
   *Practical Guidelines:*
   - Use double precision arithmetic
-  - Monitor condition n umbers
+  - Monitor condition numbers
   - Check convergence from multiple starting points
   - Validate results with alternative algorithms
 ]
@@ -408,7 +408,7 @@
 #slide(title: [Summary: Mathematical Foundations for Factor Analysis])[
   *Essential Matrix Theory:*
   - Spectral decomposition enables eigenvalue methods
-  - SVD provides n umerical stability and generality
+  - SVD provides numerical stability and generality
   - Matrix norms quantify approximation quality
 
   *Statistical Theory:*
@@ -418,7 +418,7 @@
 
   *Computational Aspects:*
   - Numerical stability requires careful algorithm design
-  - Condition n umbers indicate potential problems
+  - Condition numbers indicate potential problems
   - Regularization prevents overfitting and instability
 
   *Integration in Practice:*
