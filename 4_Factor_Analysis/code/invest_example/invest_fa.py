@@ -27,12 +27,14 @@ import seaborn as sns
 from factor_analyzer import FactorAnalyzer
 from factor_analyzer.factor_analyzer import calculate_bartlett_sphericity, calculate_kmo
 from sklearn.preprocessing import StandardScaler
-from utils import setup_logger
 
 # %%
 # Setup logging and paths
 script_dir = Path(__file__).resolve().parent
-logger = setup_logger("invest_fa")
+
+# Simple logger
+import logging
+logger = logging.getLogger("invest_fa")
 
 logger.info("Starting European Stock Markets Factor Analysis")
 print("European Stock Markets - Factor Analysis")

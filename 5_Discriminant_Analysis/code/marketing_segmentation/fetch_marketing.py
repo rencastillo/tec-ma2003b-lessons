@@ -9,11 +9,12 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from utils import setup_logger
 
 warnings.filterwarnings("ignore")
 
-logger = setup_logger(__name__)
+# Simple logger
+import logging
+logger = logging.getLogger(__name__)
 
 script_dir = Path(__file__).resolve().parent
 data_file = script_dir / "marketing.csv"

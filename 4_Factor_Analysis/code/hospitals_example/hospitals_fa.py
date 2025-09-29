@@ -25,12 +25,14 @@ import seaborn as sns
 from factor_analyzer import FactorAnalyzer
 from factor_analyzer.factor_analyzer import calculate_bartlett_sphericity, calculate_kmo
 from sklearn.preprocessing import StandardScaler
-from utils import setup_logger
 
 # %%
 # Setup logging and paths
 script_dir = Path(__file__).resolve().parent
-logger = setup_logger("hospitals_fa")
+
+# Simple logger
+import logging
+logger = logging.getLogger("hospitals_fa")
 
 logger.info("Starting Hospital Health Outcomes Factor Analysis")
 print("Hospital Health Outcomes - Factor Analysis")

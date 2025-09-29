@@ -23,9 +23,10 @@ import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from utils import setup_logger
 
-logger = setup_logger(__name__)
+# Simple logger
+import logging
+logger = logging.getLogger(__name__)
 
 # %% [markdown]
 # ## Data Loading and Exploration

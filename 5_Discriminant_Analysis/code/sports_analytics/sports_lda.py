@@ -18,11 +18,12 @@ from sklearn.discriminant_analysis import (
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.preprocessing import StandardScaler
-from utils import setup_logger
 
 warnings.filterwarnings("ignore")
 
-logger = setup_logger(__name__)
+# Simple logger
+import logging
+logger = logging.getLogger(__name__)
 
 script_dir = Path(__file__).resolve().parent
 data_file = script_dir / "sports.csv"

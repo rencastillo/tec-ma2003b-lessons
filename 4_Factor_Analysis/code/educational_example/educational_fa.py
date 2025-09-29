@@ -27,9 +27,10 @@ from factor_analyzer import FactorAnalyzer
 from factor_analyzer.factor_analyzer import calculate_bartlett_sphericity, calculate_kmo
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from utils import setup_logger
 
-logger = setup_logger(__name__)
+# Simple logger
+import logging
+logger = logging.getLogger(__name__)
 
 # %% [markdown]
 # ## Data Loading and Exploration
