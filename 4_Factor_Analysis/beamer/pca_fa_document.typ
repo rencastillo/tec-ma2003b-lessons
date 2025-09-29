@@ -16,7 +16,7 @@
 
   #v(0.5em)
 
-  #text(size: 1em)[Instituto Tecnológico de Costa Rica]
+  #text(size: 1em)[Tecnológico de Monterrey]
 
   #v(0.5em)
 
