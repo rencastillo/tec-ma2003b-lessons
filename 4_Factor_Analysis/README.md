@@ -1,18 +1,28 @@
 # Chapter 4 — Factor Analysis
 
-This chapter covers Factor Analysis techniques for dim#### Working Code Examples
+This chapter covers Factor Analysis techniques for dim#### Interactive Jupyter Notebooks (`snippets/`)
+
+**NEW**: Interactive Jupyter notebooks for hands-on learning and experimentation:
+
 ```
-code/
-├── educational_example/               # Synthetic educational PCA demonstration (for comparison)
-│   ├── fetch_educational.py          # Generates synthetic educational data
-│   ├── educational_pca.py            # PCA analysis on educational assessments
-│   ├── educational_fa.py             # Factor Analysis on same data
-│   ├── educational.csv               # Generated synthetic dataset
-│   ├── EDUCATIONAL_ASSESSMENT_DATA_DICTIONARY.md # Detailed data dictionary
-│   ├── README.md                     # Educational context and usage
-│   ├── pca_scree.png                 # PCA component selection visualization
-│   ├── fa_scree.png                  # FA factor selection visualization
-│   └── fa_loadings.png               # Factor loadings heatmapy reduction and latent variable modeling in multivariate data.
+snippets/
+├── 01_pca_basic_example.ipynb         # Basic PCA concepts with simple 3×2 data
+├── 02_component_retention.ipynb      # Component retention methods (Kaiser, scree plot)
+├── 03_factor_analysis_basic.ipynb    # Basic factor analysis with correlation matrix
+├── 04_factor_rotation.ipynb          # Factor rotation comparison (Varimax, Promax)
+├── 05_complete_workflow.ipynb        # Complete end-to-end factor analysis workflow
+├── README.md                         # Notebook usage guide and setup instructions
+├── TESTING_RESULTS.md                # Validation results for all notebooks
+└── test_all_snippets.py              # Automated testing script
+```
+
+**Educational Features**:
+
+- **Interactive cells**: Mix of markdown explanations and executable code
+- **Progressive complexity**: From basic concepts to advanced workflows
+- **Self-contained**: Each notebook includes data generation and analysis
+- **VS Code/Jupyter compatible**: Uses py-percent format for dual editing modes
+- **Comprehensive testing**: Automated validation ensures all examples work correctly
 
 ## Chapter Overview
 
