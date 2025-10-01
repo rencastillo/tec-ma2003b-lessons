@@ -143,6 +143,20 @@ print(f"Uniquenesses: {uniqueness}")
 
 == Factor Rotation
 
+Factor rotation is a technique applied after factor extraction to make factors easier to interpret. It "rotates" the factor axes to achieve *simple structure*: each variable should load highly on only one factor and low on others.
+
+*The problem:* Initial extraction often produces factors where many variables have moderate loadings on multiple factors, making interpretation difficult.
+
+*The solution:* Rotation redistributes variance among factors without changing the total variance explained.
+
+*Two main types:*
+
+- *Orthogonal rotation* (e.g., Varimax): Keeps factors uncorrelated (independent)
+  - Simpler interpretation, but may be unrealistic if constructs actually correlate
+
+- *Oblique rotation* (e.g., Promax, Oblimin): Allows factors to correlate
+  - More realistic for real-world data, slightly more complex interpretation
+
 #table(
   columns: 4,
   align: center,
