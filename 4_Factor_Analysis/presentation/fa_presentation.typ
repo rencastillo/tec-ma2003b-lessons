@@ -208,6 +208,23 @@ Factor rotation is a technique applied after factor extraction to make factors e
 
 = Complete Analysis Workflow
 
+Before performing Factor Analysis, we must verify that our data is suitable:
+
+*Kaiser-Meyer-Olkin (KMO) Test*
+- Measures if your variables have enough in common to group into factors
+- High KMO means variables cluster well together; low KMO means they are too independent
+- Ranges from 0 to 1
+- Interpretation: > 0.9 excellent, > 0.8 good, > 0.6 acceptable, < 0.5 unacceptable
+- *What it tests:* Are correlations strong enough for FA to be useful?
+
+*Bartlett's Test of Sphericity*
+- Tests if the correlation matrix is significantly different from an identity matrix
+- Uses chi-square statistic
+- Interpretation: $p < 0.05$ means variables are correlated (good for FA)
+- *What it tests:* Are variables correlated at all?
+
+*Key difference:* Bartlett tests if correlations exist, KMO tests if they are strong enough.
+
 ```python
 import numpy as np
 from sklearn.decomposition import PCA
